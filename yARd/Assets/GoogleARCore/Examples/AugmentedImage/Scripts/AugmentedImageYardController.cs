@@ -83,13 +83,17 @@ namespace GoogleARCore.Examples.AugmentedImage
                     visualizer.Image = image;
                     m_Visualizers.Add(image.DatabaseIndex, visualizer);
 
-
                     yardImages.transform.GetChild(0).gameObject.SetActive(true);
                     //Position yard based on tracked anchor
+                        
                     yardImages.transform.position = anchor.transform.position;
-                    yardImages.transform.rotation = anchor.transform.rotation ;
+                    //yardImages.transform.rotation = anchor.transform.rotation;
                     //- yardImages.imageTransforms[i].transform.rotation
                     yardImages.transform.position += yardImages.orginOffset[image.DatabaseIndex];
+
+
+                    yardImages.transform.parent = anchor.transform;
+
 
                 }
                 else if (image.TrackingState == TrackingState.Stopped && visualizer != null)

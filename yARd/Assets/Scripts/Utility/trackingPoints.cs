@@ -17,6 +17,7 @@ public class trackingPoints : MonoBehaviour
 
         for(int i=0; i < imageTransforms.Length; i++)
         {
+            //orginOffset[i] = new Vector3(-imageTransforms[i].transform.position.x, imageTransforms[i].transform.position.y, imageTransforms[i].transform.position.z);
             orginOffset[i] = transform.position - imageTransforms[i].transform.position;
         }
 
